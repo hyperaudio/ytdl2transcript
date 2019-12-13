@@ -1,4 +1,8 @@
 .PHONY: output clean
+.DEFAULT_GOAL := output
+
+output: input/subs.info.json input/auto-subs.info.json
+	node src/convert
 
 input/subs.info.json:
 	youtube-dl --continue --retries 5 --write-info-json \
@@ -39,9 +43,6 @@ input/auto-subs.info.json:
 		--all-subs --sub-format vtt --write-auto-sub \
 		--output "input/auto-subs.%(ext)s" \
 		"https://www.youtube.com/watch?v=hB7aGnfLB-8"
-
-output: input/subs.info.json input/auto-subs.info.json
-	node src/convert
 
 clean:
 	rm -f ./input/*

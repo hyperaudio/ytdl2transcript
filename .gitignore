@@ -1,7 +1,11 @@
 
-input/
-debug/
-output/
+input/*
+debug/*
+output/*
+
+!input/.keep
+!debug/.keep
+!output/.keep
 
 # Created by https://www.gitignore.io/api/node,code,linux,macos,textmate
 # Edit at https://www.gitignore.io/?templates=node,code,linux,macos,textmate
