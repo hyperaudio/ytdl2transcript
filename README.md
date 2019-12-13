@@ -1,4 +1,4 @@
-# YTDL2TRAMSCRIPT
+# YTDL2TRANSCRIPT
 
 Experiments in converting YT subtitle formats to a JSON transcript with word-level timings.
 
