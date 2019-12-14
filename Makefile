@@ -2,7 +2,7 @@
 .DEFAULT_GOAL := output
 
 output: input/subs.info.json input/auto-subs.info.json
-	node src/convert
+	./node_modules/.bin/babel-node src/index.js
 
 input/subs.info.json:
 	youtube-dl --continue --retries 5 --write-info-json \

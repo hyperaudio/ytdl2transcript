@@ -1,16 +1,50 @@
 {
   "name": "ytdl2transcript",
   "version": "1.0.0",
-  "description": "",
-  "main": "src/index.js",
+  "description": "vtt, ttml, srv3 -> transcript JSON",
+  "main": "./lib/umd/index.js",
+  "module": "./lib/es/index.js",
+  "unpkg": "./lib/umd/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf ./lib && npm run build:js",
+    "build:js": "cross-env NODE_ENV=production rollup -c"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Laurian Gridinoc <laurian@gridinoc.name> (https://gridinoc.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyperaudio/ytdl2transcript.git"
+  },
+  "license": "MIT",
   "dependencies": {
     "shortid": "^2.2.15",
     "vtt.js": "^0.13.0",
     "xml2js": "^0.4.22"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.7.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.7.5",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.6",
+    "@babel/runtime": "^7.7.6",
+    "@rollup/plugin-json": "^4.0.0",
+    "babel-eslint": "^10.0.3",
+    "cross-env": "^6.0.3",
+    "cross-spawn": "^7.0.1",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.19.1",
+    "rollup": "^1.27.12",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-license": "^0.13.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-uglify": "^6.0.4"
   }
 }
