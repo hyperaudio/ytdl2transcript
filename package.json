@@ -11,6 +11,6 @@
   "dependencies": {
     "shortid": "^2.2.15",
     "vtt.js": "^0.13.0",
-    "xml2js": "^0.4.22"
+    "xml2js": "^0.5.0"
   }
 }
